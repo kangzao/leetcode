@@ -26,12 +26,12 @@ public class Medium_003_LongestSubstringWithoutRepeatingCharacters {
     int ret = 0;
     Map<Character, Integer> map = new HashMap<Character, Integer>();
     for (int end = 0, start = 0; end < s.length(); end++) {
-      char c = s.charAt(end);
+      Character c = s.charAt(end);
       if (map.containsKey(c)) {
-        System.out.println("start=" + start);
+        System.out.println("start=" + start + ",end=" + end + ",map=" + map);
         start = Math.max(map.get(c) + 1, start);
       }
-      ret = Math.max(ret, end - start + 1);
+      ret = Math.max(end - start + 1, ret);
       map.put(c, end);
     }
     return ret;
