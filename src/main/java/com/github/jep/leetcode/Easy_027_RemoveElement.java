@@ -56,8 +56,7 @@ public class Easy_027_RemoveElement {
 
     for (int i = 0; i < nums.length; i++) {
       if (nums[i] != val) {
-        nums[position] = nums[i];
-        position++;
+        nums[position++] = nums[i];
         System.out.println("position=" + position + ",nums=" + Arrays.toString(nums));
       }
 
